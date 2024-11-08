@@ -5,14 +5,16 @@ try:
     connection = con.connect(
         host="localhost",            # Host name (e.g., localhost)
         user="root",        # MySQL username
-        password="",    # MySQL password
-        database="classicmodels",     # Database name
-        port = 3307
+        password="Michael@18",    # MySQL password
+        database="tutorial",     # Database name
+        port = 3306
     )
     def createTbl():
         query = "CREATE TABLE attendance (id PRIMARY KEY AUTO_INCREMENT,name VARCHAR(200), email VARCHAR(60),phone VARCHAR(20))"
-        cursor.execute(query)
+
+        con.cursor().execute(query)
         return True
+    createTbl()
     def addData(name,phone):
         insert_query = "INSERT INTO test (name, phone) VALUES (%s, %s)"
         data = (name, phone)
